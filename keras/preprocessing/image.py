@@ -223,6 +223,7 @@ class ImageDataGenerator(object):
             Required for featurewise_center, featurewise_std_normalization and zca_whitening.
         '''
         X = np.copy(X)
+        X = X.astype("float32")
         
         if augment:
             aX = np.zeros(tuple([rounds*X.shape[0]]+list(X.shape)[1:]))
